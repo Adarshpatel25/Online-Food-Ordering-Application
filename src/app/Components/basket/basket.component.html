@@ -1,0 +1,73 @@
+<div class="bgc">
+  <app-header></app-header>
+
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <!-- Cart Items List -->
+      <div class="col-12">
+        <div class="cartItemsList">
+          <h2 class="mb-4 text-center">My Cart</h2>
+
+          <div class="table-responsive">
+            <table class="table table-bordered table-hover text-center">
+              <thead class="thead-light">
+                <tr>
+                  <th>Item</th>
+                  <th>Description</th>
+                  <th>Price</th>
+                  <th>Quantity</th>
+                  <th>Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of cartItems"
+                  [ngStyle]="{'display': getSelectedCount(item.menuItem.name) == 0 ? 'none' : 'table-row'}">
+                  <td class="item-cell d-flex align-items-center">
+                    <img [src]="item.menuItem.imageUrl" alt="{{ item.menuItem.name }}" class="img-fluid cart-img">
+                    <span>{{ item.menuItem.name }}</span>
+                  </td>
+                  <td>{{ item.menuItem.description }}</td>
+                  <td>₹{{ item.menuItem.price }}</td>
+                  <td>
+                    <button class="add btn-sm btn-success" (click)="addToCart(item.menuItem)">➕</button>
+                    <span class="count mx-2">{{getSelectedCount(item.menuItem.name)}}</span>
+                    <button (click)="removeItem(item.menuItem)" class="remove btn-sm btn-danger">⛔</button>
+                  </td>
+                  <td>₹{{ item.menuItem.price * getSelectedCount(item.menuItem.name) }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div *ngIf="cartItems.length === 0" class="mt-4 text-center">
+            <h5>Your Cart is empty.</h5>
+            <button class="btn btn-primary mt-3" routerLink="/restaurantPage">Shop Now!</button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Basket Actions (Second Row) -->
+      <div class="col-12 my-5">
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-8 text-center">
+            <div class="basketActions">
+              <strong class="amount">Total Amount: ₹{{ totalCost }}</strong>
+              <div class="btn-wrapper mt-3 d-flex flex-wrap justify-content-center">
+                <button class="btn checkout btn-success mx-2" (click)="placeOrder()" [disabled]="cartItems.length == 0">
+                  Checkout
+                </button>
+                <button class="btn btn-warning clear-basket mx-2" (click)="clearCart()" [disabled]="cartItems.length == 0">
+                  Clear Basket
+                </button>
+                <button class="btn btn-primary add-more mx-2" (click)="addMoreItems()">Shop More</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <app-footer></app-footer>
+</div>

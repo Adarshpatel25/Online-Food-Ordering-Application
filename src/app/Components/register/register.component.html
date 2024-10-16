@@ -1,0 +1,71 @@
+
+  <div class="container col-sm-12 col-md-8 col-lg-6 col-xl-4 p-4 mt-5 bg-light rounded shadow">
+    <h2 class="text-center">Register</h2>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="col-xs-2 col-sm-8 col-md-8 col-lg-10 ms-sm-4">
+          <label for="email" class="form-label">Email:</label>
+          <input type="email" id="email" formControlName="email" class="form-control"
+            [ngClass]="{'is-invalid': registerForm.get('email')!.invalid && registerForm.get('email')!.touched}" />
+          <div *ngIf="registerForm.get('email')!.invalid && registerForm.get('email')!.touched"
+            class="invalid-feedback">
+            <div *ngIf="registerForm.get('email')!.errors?.['required']">Email is required.</div>
+            <div *ngIf="registerForm.get('email')!.errors?.['emailPattern']">Email must contain '&#64;' and '.'
+              characters.</div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-2 col-sm-8 col-md-8 col-lg-10 ms-sm-4">
+          <label for="password" class="form-label">Password:</label>
+          <input id="password" formControlName="password" type="password" class="form-control" [(ngModel)]="password"
+            [ngClass]="{'is-invalid': registerForm.get('password')!.invalid && registerForm.get('password')!.touched}" />
+          <div *ngIf="registerForm.get('password')!.invalid && registerForm.get('password')!.touched"
+            class="invalid-feedback">
+            <div *ngIf="registerForm.get('password')!.errors?.['required']">Password is required.</div>
+            <div *ngIf="registerForm.get('password')!.errors?.['minlength']">Password must be at least 8 characters
+              long.
+            </div>
+            <div *ngIf="registerForm.get('password')!.errors?.['passwordContainsSpace']">Password cannot contain spaces.
+            </div>
+            <div *ngIf="registerForm.get('password')!.errors?.['passwordPattern']">Password must contain at least one
+              Uppercase character, one Lowercase character, a Number and a Special Character</div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-2 col-sm-8 col-md-8 col-lg-10 ms-sm-4">
+          <label for="confirmPassword" class="form-label">Confirm Password:</label>
+          <input id="confirmPassword" formControlName="confirmPassword" type="password" class="form-control" />
+          <div
+            *ngIf="this.confirmPasswordValidator() === false && registerForm.get('confirmPassword')!.touched === true"
+            style="color: red; font-size: 14px;">Confirm Password does not match, kindly
+            check again.</div>
+        </div>
+      </div>
+
+      <!-- Role Selection -->
+      <div class="row">
+        <div class="col-sm-4 col-md-6 col-lg-4 ms-sm-4">
+          <label class="form-label">Role:</label>
+          <select formControlName="role" class="form-select select">
+            <option value="user">User</option>
+            <option value="admin">Admin</option>
+          </select>
+          <div *ngIf="registerForm.get('role')!.invalid && registerForm.get('role')!.touched" class="invalid-feedback">
+            Role is required.
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-5 mt-4 ms-sm-4 mb-1 mx-auto">
+          <button type="submit" class="btn btn-primary" [disabled]="registerForm.invalid">Register</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8 ms-sm-4 form-text">Already Registered? <a routerLink="/login">Login here</a></div>
+      </div>
+    </form>
+  </div>

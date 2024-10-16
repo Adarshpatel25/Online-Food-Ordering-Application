@@ -1,0 +1,33 @@
+<div class="bgc">
+  <app-header></app-header>
+  <div class="container mb-3">
+    <div class="row">
+      <!-- Reviews Section -->
+      <div class="col-xl-7">
+        <h2 class="text-center mt-2 mb-3">Customer Reviews</h2>
+
+        <div *ngIf="reviews.length === 0" class="alert alert-info">
+          No reviews yet. Be the first to leave a review!
+        </div>
+
+        <div *ngIf="reviews.length > 0" class="reviews">  
+          <div class="reviewContent mb-3 me-3" *ngFor="let review of reviews">
+            <p>{{ review.text }}</p>
+            <small class="author">~ {{ review.author }}</small>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Add Review Section -->
+      <div class="col-xl-5 addReview">
+        <h2 class="text-center mt-2 mb-3">Add a Review</h2>
+        <textarea class="form-control mt-2" [(ngModel)]="newReview" placeholder="Leave a review" required></textarea>
+        <button class="btn btn-primary mt-4" (click)="submitReview()">Submit</button>
+        <div *ngIf="errorMessage && this.newReview.length === 0" class="alert alert-danger mt-3">
+          {{ errorMessage }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-footer></app-footer>
+</div>

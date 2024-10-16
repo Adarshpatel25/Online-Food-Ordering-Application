@@ -1,0 +1,49 @@
+<header class="custom-header p-2">
+    <nav class="container">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
+            <button class="btn btn-outline-light fs-5 no-hover d-md-none" (click)="goBack()">
+                <i class="fas fa-arrow-left"></i> Back
+            </button>
+            <!-- Branding -->
+            <div class="logo-container d-flex align-items-center">
+                <a class="m-0 d-flex align-items-center text-decoration-none text-white" routerLink="/home">
+                    <img src="../../../assets/image/resto-logo.jpg" alt="Restaurant System Logo" class="me-2">
+                    <h3 class="m-0">Restaurant System</h3>
+                </a>
+            </div>
+            <!-- Navigation -->
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <div class="container-fluid">
+                    <!-- Toggler button for smaller screens -->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <!-- Collapsible menu -->
+                    <div *ngIf="loggedInUser" class="collapse navbar-collapse" id="navbarNav">
+
+                        <div class="d-flex align-items-center">
+                            <a class="nav-link text-light me-3" routerLink="/basket">
+                                <i class="fas fa-shopping-cart"></i> My Cart
+                            </a>
+                            <a class="nav-link text-light me-3" routerLink="/profilePage">
+                                <i class="fas fa-user"></i> My Account
+                            </a>
+                            <button class="btn btn-danger mx-4" (click)="logout()">
+                                <i class="fas fa-sign-out-alt"></i> Logout
+                            </button>
+                        </div>
+                    </div>
+                    <div *ngIf="!loggedInUser" class="collapse-navbar-collapse">
+
+                        <div class="d-flex align-items-center">
+                            <a class="nav-link text-light me-3 login" routerLink="/basket">
+                                Login
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </nav>
+</header>

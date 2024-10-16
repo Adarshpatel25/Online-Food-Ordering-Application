@@ -1,0 +1,83 @@
+.bgc {
+  background-image: url("../../../assets/image/home-page.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  height: 140vh;
+  width: 100vw;
+}
+
+/* General Container Styling */
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Responsive Grid for Form Rows */
+.row {
+  margin-bottom: 15px;
+}
+
+/* Form Elements Styling */
+.form-control {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* Label Styling */
+.form-label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Feedback Messages */
+.invalid-feedback {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+/* Button Styling */
+.btn-primary {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 767px) {
+  .form-control {
+    padding: 8px;
+  }
+
+  .btn-primary {
+    padding: 12px;
+    font-size: 16px;
+  }
+
+  .invalid-feedback {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 30px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 600px;
+    padding: 40px;
+  }
+
+  .btn-primary {
+    padding: 15px;
+    font-size: 18px;
+  }
+}

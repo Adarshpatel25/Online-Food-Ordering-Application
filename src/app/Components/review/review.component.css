@@ -1,0 +1,126 @@
+.bgc {
+  height: 100vh;
+  /* Ensure full viewport height */
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  flex: 1;
+  /* Ensure main content fills available space */
+  padding: 0 15px;
+  /* Add padding for smaller screens */
+  margin-top: 80px;
+}
+
+h2 {
+  font-size: 1.75rem;
+}
+
+
+.reviewContent {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  background-color: #f8f9fa;
+
+}
+
+.author {
+  font-size: 0.875rem;
+  color: #6c757d;
+}
+
+.addReview textarea {
+  resize: vertical;
+}
+
+.addReview .btn {
+  width: 100%;
+}
+
+.reviews {
+  height: 400px;
+  overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+  color: rgb(34, 31, 31);
+}
+
+@media (max-width: 576px) {
+  .container {
+    margin-top: 70px;
+    /* Adjusted for smaller screens */
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .reviewContent {
+    padding: 10px;
+  }
+
+  .author {
+    font-size: 0.75rem;
+  }
+
+  .addReview textarea {
+    font-size: 0.875rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    margin-top: 80px;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  .reviewContent {
+    padding: 15px;
+  }
+
+  .author {
+    font-size: 0.875rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    margin-top: 90px;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .reviewContent {
+    padding: 20px;
+  }
+
+  .author {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    margin-top: 100px;
+  }
+
+  h2 {
+    font-size: 2.25rem;
+  }
+
+  .reviewContent {
+    padding: 25px;
+  }
+
+  .author {
+    font-size: 1.125rem;
+  }
+}

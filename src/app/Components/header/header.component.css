@@ -1,0 +1,117 @@
+
+/* Basic reset */
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Custom header styling */
+.custom-header {
+    background-color: rgb(8, 164, 185);
+    color: #ffffff;
+    width: 100%;
+    z-index: 1030;
+    position: relative;
+}
+
+.custom-header .container {
+    max-width: 100%;
+    padding: 0 15px;
+}
+
+/* Logo and branding */
+.logo-container img {
+    width: 40px;
+    height: 40px;
+}
+
+.logo-container h3 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+/* Responsive adjustments for navbar */
+.navbar {
+    padding: 0;
+}
+
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.navbar-toggler-icon {
+    color: #fff;
+}
+
+
+/* Alignments */
+.d-flex {
+    display: flex !important;
+}
+
+
+
+/* Responsive styling for small screens */
+@media (max-width: 767.98px) {
+    .logo-container img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .logo-container h3 {
+        font-size: 1.2rem;
+    }
+
+    .search-form input {
+        max-width: 150px;
+    }
+
+    .search-form button {
+        padding: 0.25rem 0.5rem;
+    }
+
+    .btn-outline-light {
+        font-size: 0.875rem;
+        padding: 0.25rem 0.5rem;
+    }
+
+    .navbar-collapse {
+        text-align: center;
+    }
+
+    .navbar-nav .nav-link {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+/* Responsive styling for extra small screens (below 300px) */
+@media (max-width: 299.98px) {
+    .logo-container img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .logo-container h3 {
+        font-size: 1rem;
+    }
+
+    .search-form input {
+        max-width: 120px;
+    }
+
+    .search-form button {
+        padding: 0.2rem 0.4rem;
+    }
+
+    .btn-outline-light {
+        font-size: 0.75rem;
+        padding: 0.2rem 0.4rem;
+    }
+
+    .navbar-collapse {
+        font-size: 0.75rem;
+    }
+}
+

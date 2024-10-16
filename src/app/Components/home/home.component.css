@@ -1,0 +1,55 @@
+/* Ensure full-width for bgc and content alignment */
+.bgc {
+    background-image: url("../../../assets/image/home-page.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  /* Container styling */
+  .container {
+    flex: 1;
+    margin-top: 2rem; /* Adjust margin as needed */
+    margin-bottom: 2rem; /* Adjust margin as needed */
+  }
+  
+  /* Center align text and buttons */
+  .text-center {
+    text-align: center;
+  }
+  
+  .button-group {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  /* Responsive styling for buttons */
+  .btn {
+    font-size: 1.5rem;
+    padding: 5px 24px;
+  }
+  
+  @media (max-width: 576px) {
+    .btn {
+      font-size: 0.875rem;
+    }
+  
+    .button-group {
+      flex-direction: column;
+    }
+  
+    .btn-primary, .btn-secondary {
+      margin-bottom: 1rem;
+    }
+  }
+  
+  @media (min-width: 577px) and (max-width: 768px) {
+    .btn {
+      font-size: 0.9rem;
+    }
+  }
+
+  

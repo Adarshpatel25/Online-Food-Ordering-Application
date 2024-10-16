@@ -1,0 +1,95 @@
+.custom-header {
+    background-color: rgba(77, 79, 164, 0.995);
+    color: #ffffff;
+  }
+  
+  .box-size {
+    box-sizing: border-box;
+  }
+  
+  .boxed-form {
+    border: 1px solid #ced4da; /* Light gray border */
+    border-radius: 0.375rem; /* Rounded corners */
+    padding: 1.5rem; /* Padding around the form */
+    background-color: #ffffff; /* White background */
+  }
+  
+  .form-control.box-size {
+    border: 1px solid #ced4da; /* Light gray border for input fields */
+    border-radius: 0.375rem; /* Rounded corners for input fields */
+  }
+  
+  
+  .form-horizontal .form-control {
+    border-radius: 0.25rem;
+  }
+  
+  .btn {
+    font-size: 1rem;
+  }
+  
+  .text-danger {
+    color: #dc3545;
+    font-size: 0.875rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .text-danger i {
+    margin-right: 5px;
+  }
+  
+  .container {
+    max-width: 800px;
+    padding: 0 15px;
+  }
+  
+  @media (max-width: 576px) {
+    .form-control {
+      font-size: 0.875rem;
+    }
+  
+    footer {
+      padding: 5px;
+      font-size: 14px;
+    }
+  
+    .btn {
+      font-size: 0.875rem;
+    }
+  }
+  
+  footer {
+    background-color: rgba(77, 79, 164, 0.995);
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  @media (max-width: 768px) {
+    .boxed-form {
+      padding: 0.75rem; /* Reduce padding for very small screens */
+    }
+  
+    .form-control.box-size {
+      font-size: 0.875rem; /* Adjust font size inside input fields */
+    }
+  
+    .btn {
+      padding: 0.5rem 1rem; /* Adjust button padding */
+    }
+  }
+  
+  
+  .col-md-6 {
+    flex: 1 1 50%; /* Take up 50% of the width on medium and larger screens */
+  }
+  
+  @media (max-width: 1098px) {
+    .col-md-6 {
+      flex: 1 1 100%; /* Take up full width on smaller screens */
+    }
+  }
+  

@@ -1,0 +1,77 @@
+/* General Styles */
+.bgc {
+  background-color: #f8f9fa;
+}
+
+.container {
+  max-width: 1140px; /* Adjust as needed for larger screens */
+}
+
+.cartItemsList {
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 0.25rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,.075);
+}
+
+.table {
+  margin-bottom: 0;
+}
+
+.table td, .table th {
+  vertical-align: middle; /* Center content vertically in table cells */
+}
+
+.table img.cart-img {
+  max-width: 120px; /* Increased image size */
+  height: auto;
+  margin-right: 10px;
+}
+
+.item-cell {
+  display: flex;
+  align-items: center;
+}
+
+.quantity-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add, .remove {
+  border: none;
+  border-radius: 24px;
+}
+
+/* Button Wrapping */
+.btn-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn-wrapper .btn {
+  margin: 0.5rem; /* Ensure spacing between buttons */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .table img.cart-img {
+    max-width: 100px; /* Adjust for smaller screens */
+  }
+}
+
+@media (max-width: 576px) {
+  .table img.cart-img {
+    max-width: 80px; /* Adjust for very small screens */
+  }
+  
+  .btn-wrapper {
+    flex-direction: column;
+  }
+
+  .btn-wrapper .btn {
+    margin: 0.5rem 0;
+  }
+}

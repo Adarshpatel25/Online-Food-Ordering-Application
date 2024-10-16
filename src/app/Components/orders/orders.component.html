@@ -1,0 +1,22 @@
+<div class="bgc">
+    <app-header></app-header>
+    <div class="container mt-xs-5">
+        <h3 class="text-center">Orders History</h3>
+        <div class="list-group">
+            <div *ngFor="let order of orders" class="list-group-item list-group-item-action" aria-current="true">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">Ordered at {{order.restaurantName}}</h5>
+                    <span class="time">{{order.time}}</span>
+                </div>
+                <p class="menuItems m-0">{{parseMenuItems(order)}}</p>
+                <span class="price">₹{{order.price}}</span>
+            </div>
+            <div *ngIf="!this.orders" class="vh-100 mt-5 mx-auto empty">
+                <h1>Orders History is empty.</h1>
+                <h4 class="mt-5">Check the Best <a routerLink="/restaurantPage">Restaurants</a> to Order your favourite
+                    food </h4>
+            </div>
+        </div>
+    </div>
+    <app-footer></app-footer>
+</div>  

@@ -1,0 +1,136 @@
+.bgc {
+  background-color: #f8f9fa;
+}
+
+.container-box {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+.main {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  overflow-x: auto; /* Ensure no horizontal overflow */
+}
+
+h1, h2 {
+  margin-bottom: 20px;
+  font-size: 1.5em;
+  word-wrap: break-word;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  word-wrap: break-word; /* Prevents overflow */
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+.item-cell img {
+  max-width: 100px;
+  max-height: 100px;
+  margin-right: 10px;
+  border-radius: 5px;
+  object-fit: cover; /* Ensures image fits without overflow */
+}
+
+.cart, .add, .remove {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.cart:hover, .add:hover, .remove:hover {
+  background-color: #0056b3;
+}
+
+.count span {
+  margin: 0 5px;
+  display: inline-block; /* Keeps the span inline with buttons */
+}
+
+.checkout {
+  width: 100%;
+  background-color: #28a745;
+  color: white;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.checkout:hover {
+  background-color: #218838;
+}
+
+@media (max-width: 767px) {
+  .main {
+      padding: 10px;
+  }
+
+  h1, h2 {
+      font-size: 1.2em;
+  }
+
+  .item-cell img {
+      max-width: 60px;
+      max-height: 60px;
+  }
+
+  .cart, .add, .remove {
+      font-size: 12px;
+      padding: 3px 8px;
+  }
+
+  .checkout {
+      padding: 10px;
+      font-size: 14px;
+  }
+}
+
+@media (max-width: 575px) {
+  .row {
+      flex-direction: column;
+  }
+
+  .col-sm-4, .col-sm-8 {
+      flex: 0 0 100%;
+      max-width: 100%;
+      margin-bottom: 15px;
+  }
+
+  th, td {
+      padding: 8px;
+  }
+
+  .item-cell img {
+      max-width: 50px;
+      max-height: 50px;
+  }
+
+  table, th, td {
+      font-size: 14px; /* Adjust font size for smaller screens */
+  }
+
+  .checkout {
+      padding: 8px;
+      font-size: 12px;
+  }
+}

@@ -1,0 +1,56 @@
+<div class="container col-sm-12 col-md-8 col-lg-6 col-xl-4 p-4 mt-5 bg-light rounded shadow">
+  <h2 class="text-center mb-4">Login</h2>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <!-- Email Field -->
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" id="email" class="form-control" formControlName="email"
+        [ngClass]="{'is-invalid': loginForm.get('email')!.invalid && (loginForm.get('email')!.dirty || loginForm.get('email')!.touched)}"
+        placeholder="Enter your email" />
+      <div *ngIf="loginForm.get('email')!.invalid && (loginForm.get('email')!.dirty || loginForm.get('email')!.touched)"
+        class="invalid-feedback">
+        <div *ngIf="loginForm.get('email')!.errors?.['required']">Email is required.</div>
+        <div *ngIf="loginForm.get('email')!.errors?.['emailPattern']">Email must contain '&#64;' and '.' characters.
+        </div>
+      </div>
+    </div>
+
+    <!-- Password Field -->
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input type="password" id="password" class="form-control" formControlName="password"
+        [ngClass]="{'is-invalid': loginForm.get('password')!.invalid && (loginForm.get('password')!.dirty || loginForm.get('password')!.touched)}"
+        placeholder="Enter your password" />
+      <div
+        *ngIf="loginForm.get('password')!.invalid && (loginForm.get('password')!.dirty || loginForm.get('password')!.touched)"
+        class="invalid-feedback">
+        <div *ngIf="loginForm.get('password')!.errors?.['required']">Password is required.</div>
+        <div *ngIf="loginForm.get('password')!.errors?.['minlength']">Password must be at least 8 characters long.</div>
+        <div *ngIf="loginForm.get('password')!.errors?.['passwordContainsSpace']">Password cannot contain spaces.</div>
+        <div *ngIf="loginForm.get('password')!.errors?.['passwordPattern']">
+          Password must contain at least one Uppercase character, one Lowercase character, a Number and a Special
+          Character.
+        </div>
+      </div>
+    </div>
+
+    <!-- Role Selection -->
+    <div class="mb-3">
+      <label for="role" class="form-label">Role</label>
+      <select formControlName="role" class="form-select" id="role">
+        <option value="user">User</option>
+        <option value="admin">Admin</option>
+      </select>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="d-grid">
+      <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">Login</button>
+    </div>
+
+    <!-- Register Link -->
+    <div class="text-center mt-3">
+      <p class="form-text">Don't have an account yet? <a routerLink="/register">Register now</a></p>
+    </div>
+  </form>
+</div>

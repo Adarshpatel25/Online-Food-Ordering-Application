@@ -1,0 +1,52 @@
+<div class="bgc">
+    <app-header></app-header>
+
+    <div class="container-box">
+        <div class="main">
+            <div class="row">
+                <div class="col-sm-4">
+                    <h2>Menu List</h2>
+                </div>
+                <div class="col-sm-8">
+                    <h1>{{restaurantName}}</h1>
+                </div>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                        <th>Action</th>
+                        <th>Selected</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of menuItems">
+                        <td class="item-cell">
+                            <img [src]="item.imageUrl" alt="{{ item.name }}">
+                            {{ item.name }}
+                        </td>
+                        <td>{{ item.description }}</td>
+                        <td>{{ item.price}}</td>
+                        <td>
+                            <button class="cart" (click)="addToCart(item)">Add to Cart</button>
+                        </td>
+                        <td class="count">
+                            <button class="add" (click)="addToCart(item)">➕</button>
+                            <span class="count">{{getSelectedCount(item.name)}}</span>
+                            <button (click)="removeItem(item)" class="remove">⛔</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <button class="btn btn-info btn-block btn-lg checkout mt-3" (click)="goToCart()">
+                <span *ngIf="this.totalCost > 0">₹{{totalCost}}</span>&#9;Proceed to Checkout page
+            </button>
+        </div>
+    </div>
+
+    <app-footer></app-footer>
+</div>
